@@ -28,10 +28,5 @@ def downloads():
 
     return result
 
-def page_not_found(error):
-    return render_template('page_not_found.html'), 500
-
-app.register_error_handler(500, page_not_found)
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=False)
