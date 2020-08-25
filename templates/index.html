@@ -1,0 +1,53 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}ヨウツベダウンローダー{% endblock %}
+
+{% block styles -%}
+{{super()}}
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+{% endblock styles %}
+
+{% block content %}
+<div class="container-overflow-wrap">
+    <nav class="navbar navbar-tall navbar-full" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand logo-cont">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div style="clear: both">
+        <div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-6"></div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <form class="form-signin" action="/download" method="post">
+                    <div class="text-center mb-4">
+                      <i class="fa fa-youtube fa-4x" aria-hidden="true"></i>
+                      <h1 class="h3 mb-3 font-weight-normal">ヨウツベダウンローダー</h1>
+                    </div>
+                    </br>
+                    <p style="color:red;">{{ errorMsg }}</p>
+              
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-link"></i></span>
+                      <input type="url" name="url" class="form-control" placeholder="Youtube URL" required autofocus>
+                    </div>
+                    <br>
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-file"></i></span>
+                      <input type="text" name="filename" class="form-control" placeholder="保存ファイル名">
+                    </div>
+                    </br>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">ダウンロード</button>
+                  </form>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
